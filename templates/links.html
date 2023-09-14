@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Centered Links</title>
+    <style>
+        /* Center the list vertically and horizontally */
+        .centered-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh; /* 100% viewport height for full screen */
+        }
+
+        /* Style for the links */
+        .centered-list ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .centered-list li {
+            margin: 20px 0; /* Adjust the spacing between links */
+        }
+
+        .centered-list li a {
+            text-decoration: none;
+            color: #333; /* Text color for links */
+            font-size: 24px; /* Font size for links */
+        }
+
+        /* Change link color on hover */
+        .centered-list li a:hover {
+            color: #555; /* Text color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="centered-list">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/freqDstr">Frequency Distribution</a></li>
+            <li><a href="/scatterPlt">Scatter Plot</a></li>
+            <li><a href="/ordCorrHM">Correlation Heatmap(Ordinal)</a></li>
+            <li><a href="/catCorrHM">Correaltion Heatmap(Categorical)</a></li>
+        </ul>
+    </div>
+</body>
+</html>

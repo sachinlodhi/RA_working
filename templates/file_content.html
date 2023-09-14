@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Other Page</title>
+    <style>
+        /* Define your CSS styles for the grid layout here */
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Adjust the number of columns as needed */
+            gap: 10px; /* Adjust the gap between checkboxes */
+        }
+
+        /* Define CSS styles for each checkbox container */
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+        }
+
+        /* Define CSS styles for the checkbox itself */
+        .checkbox-input {
+            margin-right: 5px; /* Adjust margin as needed */
+        }
+
+        /* CSS styles for the button container */
+        .button-container {
+            display: flex;
+            justify-content: space-between; /* Distribute space evenly between elements */
+            margin-top: 20px; /* Adjust margin as needed */
+        }
+
+        /* CSS styles for each button */
+        .action-button {
+            padding: 10px 20px; /* Adjust padding as needed */
+            background-color: #007BFF; /* Button background color */
+            color: #fff; /* Button text color */
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Add any other custom CSS styles here */
+        .action-button:hover {
+            background-color: #0056b3; /* Button background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <form method="POST" action="/start_mapping">
+        <div class="checkbox-grid">
+            {% for word in content %}
+                <div class="checkbox-container">
+                    <input class="checkbox-input" type="checkbox" name="selected_words" value="{{ word }}" id="{{ word }}">
+                    <label for="{{ word }}">{{ word }}</label>
+                </div>
+            {% endfor %}
+        </div>
+        <button class="action-button" type="submit">Remove Selected Attributes</button>
+    </form>
+
+    <div class="button-container">
+        <!-- <form method="POST" action="/start_mapping">
+            <button id="toggleButton" class="action-button" type="submit">Start Mapping</button>
+       <a id="downloadLink" href="/download" style="display:none;">Download File</a>
+
+        </form> -->
+
+        <form method="POST" action="/start_visualizing">
+            <button class="action-button" type="submit">Start Visualizing</button>
+        </form>
+
+   <form method="POST" action="/download_mapping">
+            <button class="action-button" type="submit">Download Mapping</button>
+        </form> </div>
+
+
+
+</body>
+</html>
